@@ -15,10 +15,10 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./MedTracker:/resources/db/changelog
-    working_dir: /resources/db/changelog
+      - ./src/main/resources:/db/changelog
+    working_dir: /db
     command:
-      - --changeLogFile=changelog.sql
+      - --changeLogFile=changelog/db/changelog/changelog.sql
       - --url=jdbc:postgresql://postgres:5432/medtracker
       - --username=postgres
       - --password=postgres

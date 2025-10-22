@@ -1,0 +1,27 @@
+server:
+    port: 8083
+logging:
+    level:
+        org.springframework.security: TRACE
+
+spring:
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:9090/realms/medTracker
+            client:
+                provider:
+                    keycloak:
+                        issuer-uri: http://localhost:9090/realms/medTracker
+                        user-name-attribute: preferred_username
+                registration:
+                    keycloak:
+                        client-id: client
+                        client-secret: dBpr0bcfp7ua0UnfBDnKd7eCqTnK3am2
+                        scope: openid
+    datasource:
+        username: postgres
+        url: jdbc:postgresql://localhost:5432/postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver

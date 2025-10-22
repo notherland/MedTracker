@@ -18,7 +18,7 @@ services:
       - ./src/main/resources:/db/changelog
     working_dir: /db
     command:
-      - --changeLogFile=changelog/db/changelog/changelog.sql
+      - --changeLogFile=changelog/db/changelog/changelog_221025.sql
       - --url=jdbc:postgresql://postgres:5432/medtracker
       - --username=postgres
       - --password=postgres
